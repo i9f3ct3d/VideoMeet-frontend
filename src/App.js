@@ -140,11 +140,13 @@ function App() {
 				onChange={(e) => setName(e.target.value)}
 				style={{ marginBottom: "20px" }}
       />
-      <CopyToClipboard text={socketId} style={{ marginBottom: "2rem" }}>
-					<button variant="contained">
+      {/* <CopyToClipboard text={socketId} style={{ marginBottom: "2rem" }}> */}
+					<button onClick={() => {
+            navigator.clipboard.writeText(socketId)
+          }}  variant="contained">
 						Copy ID
 					</button>
-				</CopyToClipboard>
+				{/* </CopyToClipboard> */}
         <input
           placeholder="id to call"
           value={idToCall}
